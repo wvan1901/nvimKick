@@ -106,22 +106,19 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- Wicho CUSTOM MAPPINGS
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
-
 vim.keymap.set('n', '<leader>pv', ':Ex<CR>', { desc = 'Goes to files' })
-vim.keymap.set('n', '<leader>u', ':UndotreeShow<CR>')
 
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move Line Down' })
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move Line Up' })
 
-vim.keymap.set('n', '<C-d>', '<C-d>zz')
-vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Move Page Half Down' })
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Move Page Half Up' })
 vim.keymap.set('n', 'n', 'nzzzn')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
---vim.keymap.set('x', '<leader>p', [["_dP]])
-vim.keymap.set({ 'n', 'x' }, '<leader>p', '"+p') -- or "*p
+vim.keymap.set({ 'n', 'x' }, '<leader>p', '"+p', { desc = 'Paste System' }) -- or "*p or "_dp
 
-vim.keymap.set('n', '<leader>y', '"+y')
+vim.keymap.set('n', '<leader>y', '"+y', { desc = 'Yank System' })
 vim.keymap.set('v', '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>Y', '"+Y')
 -- DONE CUSTOM MAPPINGS!
@@ -722,7 +719,7 @@ require('lazy').setup({
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
       vim.cmd.colorscheme 'rose-pine'
 
-      -- Sets the background to transparent
+      -- Makes The Background Transparent
       vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
       vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
 
