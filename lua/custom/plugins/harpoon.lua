@@ -57,6 +57,20 @@ return {
         end,
         desc = 'harpoon to file 5',
       },
+      {
+        '<C-k>',
+        function()
+          require('harpoon'):list():prev()
+        end,
+        desc = 'harpoon file',
+      },
+      {
+        '<C-j>',
+        function()
+          require('harpoon'):list():next()
+        end,
+        desc = 'harpoon file',
+      },
     },
   },
 }
