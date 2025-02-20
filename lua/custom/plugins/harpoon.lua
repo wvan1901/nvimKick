@@ -58,18 +58,18 @@ return {
         desc = 'harpoon to file 5',
       },
       {
-        '<C-v>',
+        '<leader>b',
         function()
           require('harpoon'):list():prev()
         end,
-        desc = 'harpoon file',
+        desc = 'harpoon list prev',
       },
       {
-        '<C-m>',
+        '<leader>n',
         function()
           require('harpoon'):list():next()
         end,
-        desc = 'harpoon file',
+        desc = 'harpoon list next',
       },
     },
   },
