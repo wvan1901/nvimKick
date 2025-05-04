@@ -114,9 +114,6 @@ vim.opt.showmode = false
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
-end)
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -209,8 +206,9 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Move Page Half Down' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Move Page Half Up' })
 vim.keymap.set('n', 'n', 'nzzzn')
 vim.keymap.set('n', 'N', 'Nzzzv')
-vim.keymap.set({ 'n', 'x' }, '<leader>p', '"+p', { desc = 'Paste System' }) -- or "*p or "_dp
-vim.keymap.set('n', '<leader>y', '"+y', { desc = 'Yank System' })
+
+vim.keymap.set({ 'n', 'x' }, '<leader>p', '"+p') -- or "*p
+vim.keymap.set('n', '<leader>y', '"+y')
 vim.keymap.set('v', '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>Y', '"+Y')
 -- DONE CUSTOM MAPPINGS!
